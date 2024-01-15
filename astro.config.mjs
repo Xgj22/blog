@@ -17,7 +17,7 @@ const SERVER_PORT = 3000;
 // the url to access your blog during local development
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
 // the url to access your blog after deploying it somewhere (Eg. Netlify)
-const LIVE_URL = "https://xgj22.github.io/blog";
+const LIVE_URL = "https://xgj22.github.io/blog/";
 // this is the astro command your npm script runs
 const SCRIPT = process.env.npm_lifecycle_script || "";
 const isBuild = SCRIPT.includes("astro build");
@@ -28,6 +28,7 @@ if (isBuild) {
 }
 
 export default defineConfig({
+  base: "/blog",
   server: { port: SERVER_PORT },
   site: BASE_URL,
   integrations: [
